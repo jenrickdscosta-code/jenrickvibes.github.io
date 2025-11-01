@@ -1,58 +1,81 @@
-body {
-  background-color: #0a0a0a;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+/* General reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.hero {
-  position: relative;
+body {
+  background-color: #000;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
   height: 100vh;
+}
+
+/* Intro animation screen */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 3s ease forwards;
+  animation-delay: 2.8s;
+}
+
+.intro-logo {
+  width: 300px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: logoSlide 2.5s ease forwards;
+}
+
+/* Slide + fade animation for logo */
+@keyframes logoSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+/* Fade out intro */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Main content */
+#main-content {
+  display: none;
   text-align: center;
-  overflow: hidden;
+  padding-top: 40vh;
 }
 
-.bg-video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-  z-index: -1;
+#main-content h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  animation: fadeIn 2s ease-in;
-}
-
-.hero-text h2 {
-  color: #00ffee;
-  font-weight: 400;
+#main-content p {
+  font-size: 1.2em;
+  opacity: 0.8;
   margin-top: 10px;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 10px 25px;
-  background: #00ffee;
-  color: #0a0a0a;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #ff003c;
-  color: #fff;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #00ffee; }
-  to { text-shadow: 0 0 30px #00ffee, 0 0 50px #00ffee; }
 }
