@@ -1,44 +1,136 @@
+/* Global */
 body {
-  background-color: #f7f1ec;
-  font-family: 'Arial', sans-serif;
-  color: #111;
   margin: 0;
-  padding: 40px;
+  background-color: #111;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
 }
 
-.container {
-  text-align: left;
-  max-width: 900px;
-  margin: auto;
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
-.title {
-  font-family: 'Georgia', serif;
-  font-size: 70px;
-  font-weight: bold;
-  margin-bottom: 30px;
+.hero-bg {
+  width: 100%;
+  display: block;
+  height: auto;
 }
 
-.profile {
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.orange {
+  color: #f37b1f;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.hero p {
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+/* About Section */
+.about {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  align-items: flex-start;
+  background-color: #111;
+}
+
+.about-text {
+  width: 55%;
+}
+
+.about-text h2 {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 17px;
+  color: #eee;
+}
+
+.about-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.about-gallery img {
+  width: 300px;
+  height: auto;
+  border: 3px solid #f37b1f;
+}
+
+/* Projects Section */
+.projects {
+  background-color: #111;
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-main img {
+  width: 600px;
+  height: auto;
+}
+
+.project-side {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
-.profile-img {
-  width: 340px;
+.project-side img {
+  width: 250px;
   height: auto;
-  border-radius: 4px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
-.name-box {
-  background-color: #e8e3df;
-  padding: 20px 30px;
-}
-
-.name-box h2 {
-  font-size: 40px;
-  margin: 0;
-  line-height: 1.2;
+/* Footer */
+footer {
+  background-color: #0a0a0a;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
 }
